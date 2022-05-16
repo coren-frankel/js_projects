@@ -1,18 +1,19 @@
-let playerSelection = x
+//let playerSelection = x
 //Allow for user to type Rock, Paper, or Scissors, assigning the value to playerSelection
 //Once the playerSelection box is filled the player clicks 'Submit' to continue.
 //Upon clicking 'Submit' the entry is changed to lower case and the function computerPlay 
   //randomly chooses 'Rock' 'Paper' or 'Scissors' and returns the result.
-let computerSelection = ('Rock' || 'Paper' || 'Scissors')
-//
-function computerPlay(random.computerSelection) {
-
+const textArray = ['rock', 'paper', 'scissors'];
+const randomIndex = Math.floor(Math.random() * textArray.length);
+let computerSelection = textArray[randomIndex];
+function computerPlay() {
+  return computerSelection;
 }
 
-addEventListener()
-function roShamBo(x, y) {
+console.log(computerPlay());
+//function roShamBo(x, y) {
 
-}
+//}
 //Take the random selection from computerPlay and match it against playerSelection
 //If x == y, then print 'Draw! Try Again!'
 //Else if x = Rock && y = Paper, then print 'You Lose! Paper beats Rock!'
