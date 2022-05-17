@@ -1,19 +1,4 @@
 let playerSelection;
-function submit() {
-  playerSelection = document.getElementById("box").value.toLowerCase();
-  console.log(playerSelection);
-  if (playerSelection !== ('rock' || 'paper' || 'scissors')) {
-    const error = ('Error: Your Entry Must be Rock, Paper, or Scissors! Try Again!');
-    alert(error);
-  } else {
-    playGame(playerSelection, computerSelection);
-  }
-}
-
-//Allow for user to type Rock, Paper, or Scissors, assigning the value to playerSelection
-//Once the playerSelection box is filled the player clicks 'Submit' to continue.
-//Upon clicking 'Submit' the entry is changed to lower case 
-//Allow function computerPlay to randomly choose 'Rock' 'Paper' or 'Scissors' and return the result.
 const textArray = ['rock', 'paper', 'scissors'];
 const randomIndex = Math.floor(Math.random() * textArray.length);
 const computerSelection = textArray[randomIndex];
@@ -21,12 +6,13 @@ function computerPlay() {
   return computerSelection;
 }
 console.log(computerPlay());
-
-function playGame(playerSelection, computerSelection) {
+function submit() {
+  playerSelection = document.getElementById("box").value.toLowerCase();
+  console.log(playerSelection);
+  playGame();
+  function playGame(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         alert(draw);
-    } else if ((playerSelection = 'rock') && (computerSelection = 'paper')) {
-        alert(losePBR);
     } else if ((playerSelection = 'rock') && (computerSelection = 'scissors')) {
         alert(winRBS);
     } else if ((playerSelection = 'paper') && (computerSelection = 'rock')) {
@@ -37,10 +23,14 @@ function playGame(playerSelection, computerSelection) {
         alert(loseRBS);
     } else if ((playerSelection = 'scissors') && (computerSelection = 'paper')) {
         alert(winSBP);
-    } else 
+    } else if ((playerSelection = 'rock') && (computerSelection = 'paper')) {
+        alert(losePBR);
+    } else (playerSelection != ('rock' || 'paper' || 'scissors')) 
+        alert(error);
+  }
 }
 const draw = ('Draw! Try Again!');
-
+const error = ('Error: Incompatible Entry');
 const losePBR = ('You Lose! Paper beats Rock!');
 const winRBS = ('You Win! Rock beats Scissors!');
 const winPBR = ('You Win! Paper beats Rock!');
@@ -55,3 +45,11 @@ const winSBP = ('You Win! Scissors beats Paper!');
 //Else if x = Paper && y = Scissors, then print 'You Lose! Scissors beats Paper!'
 //Else if x = Scissors && y = Rock, then print 'You Lose! Rock beats Scissors!'
 //Else if x = Scissors && y = Paper, then print 'You Win! Scissors beats Paper!'/
+
+
+//Allow for user to type Rock, Paper, or Scissors, assigning the value to playerSelection
+//Once the playerSelection box is filled the player clicks 'Submit' to continue.
+//Upon clicking 'Submit' the entry is changed to lower case 
+//Allow function computerPlay to randomly choose 'Rock' 'Paper' or 'Scissors' and return the result.
+
+
