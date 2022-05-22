@@ -1,31 +1,32 @@
-function playRound(playerSelection, computerSelection) {
 //Allow function computerPlay to randomly choose 'Rock' 'Paper' or 'Scissors' and return the result
-    function computerPlay() {
-        const choice = ['rock', 'paper', 'scissors'];
-        let computerRandom = choice[Math.floor(Math.random() * choice.length)];
-        return computerRandom;
-    }
+function computerPlay() {
+    const choice = ['rock', 'paper', 'scissors'];
+    let computerRandom = choice[Math.floor(Math.random() * choice.length)];
+    return computerRandom;
+}
 //Allow for user to type Rock, Paper, or Scissors, assigning the value to playerSelection
 //Once the playerSelection box is filled the player clicks 'Submit' to continue.
 //Upon clicking 'Submit' the entry is changed to lower case 
-    const error = "Your entry does not work, please refresh page and try again!";
-    function soloPlay() {
-        const playerEntry = prompt("Choose Rock, Paper, or Scissors:", "1,2,3, shoot...");
-        const playerCase = playerEntry.toLowerCase();
-        switch(playerCase) {
-            case "rock":
-                return playerCase;
-                break;
-            case "paper":
-                return playerCase;
-                break;
-            case "scissors":
-                return playerCase;
-                break;
-            default:
-                alert(error);
-        }
+const error = "Your entry does not work, please refresh page and try again!";
+function soloPlay() {
+    const playerEntry = prompt("Choose Rock, Paper, or Scissors:", "1,2,3, shoot...");
+    const playerCase = playerEntry.toLowerCase();
+    switch(playerCase) {
+        case "rock":
+            return playerCase;
+            break;
+        case "paper":
+            return playerCase;
+            break;
+        case "scissors":
+            return playerCase;
+            break;
+        default:
+            alert(error);
     }
+}
+
+function playRound(playerSelection, computerSelection) {
 //Take the random selection from computerPlay and match it against playerSelection
 //If x == y, then print 'Draw! Try Again!'
 //Else if x = Rock && y = Paper, then print 'You Lose! Paper beats Rock!'
@@ -77,9 +78,17 @@ let score = `Player 1: {playerScore} Computer: {computerScore}, You {result}!`
 function game() { 
     for (let i = 0; i < 5; i++) {
         if (i <= 4) {
+            computerPlay;
+            console.log(computerSelection);
+            prompt;
+            soloPlay;
+            console.log(playerSelection);
             playRound(playerSelection, computerSelection);
+            console.log(playRound());
         } else {
+        console.log("Game Over");
         return score;
         }
     }
 }
+game();
