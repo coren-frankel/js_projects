@@ -26,69 +26,73 @@ function soloPlay() {
     }
 }
 
-//Create game function that uses playRound function 5 times
-//Use loop to keep track of 5 rounds scores
-//If player wins, 1 point gained
-//If player loses, computer gains 1 point
-//If Draw or Error, no points gained**Develop way to disregard Draw and Error for loop
-//After 5 rounds print "game over" and compare scores
-//Deliver You Win or You Lose game message
 let playerScore = 0;
 let computerScore = 0;
+
 function game() { 
-    
+//Create game function that uses playRound function 5 times
+    //Use loop to keep track of 5 rounds scores
     for (let i = 0; i < 5; i++) {
-        let result = (playerScore > computerScore) ? 'Win': 'Lose';
-        let gap = "\r\n";
-        let score = `${gap}You: ${playerScore}${gap}Computer: ${computerScore}${gap}You ${result}!`;
-        let gameOver = `Game Over: ${score}`;
-        let s = computerScore + playerScore;
+        //Deliver You Win or You Lose game message
         let playerSelection = soloPlay();
         let computerSelection = computerPlay();
+        //const score = `You: ${playerScore}   Computer: ${computerScore}`;
+        //let result = (playerScore > computerScore) ? 'Win': 'Lose';
+        let gap = "\r\n";
+        //You ${result}!;
+        //let gameOver = `Game Over${gap}Final Score:${gap}${score}`;
+    
         function playRound(playerSelection, computerSelection) {
-            //Take the random selection from computerPlay and match it against playerSelection
-            //If x == y, then print 'Draw! Try Again!'
-            //Else if x = Rock && y = Paper, then print 'You Lose! Paper beats Rock!'
-            //Else if x = Rock && y = Scissors, then print 'You Win! Rock beats Scissors!'
-            //Else if x = Paper && y = Rock, then print 'You Win! Paper beats Rock!'
-            //Else if x = Paper && y = Scissors, then print 'You Lose! Scissors beats Paper!'
-            //Else if x = Scissors && y = Rock, then print 'You Lose! Rock beats Scissors!'
-            //Else if x = Scissors && y = Paper, then print 'You Win! Scissors beats Paper!'
-            //Anything else will return error message
-                if ((playerSelection == 'rock') && (computerSelection == 'scissors')) {
-                    playerScore++;
-                    return 'You Win! Rock beats Scissors!';
-                } else if ((playerSelection == 'paper') && (computerSelection == 'rock')) {
-                    playerScore++;
-                    return 'You Win! Paper beats Rock!'; 
-                } else if ((playerSelection == 'paper') && (computerSelection == 'scissors')) {
-                    computerScore++;
-                    return 'You Lose! Scissors beats Paper!';
-                } else if ((playerSelection == 'scissors') && (computerSelection == 'rock')) {
-                    computerScore++;
-                    return 'You Lose! Rock beats Scissors!';
-                } else if ((playerSelection == 'scissors') && (computerSelection == 'paper')) {
-                    playerScore++;
-                    return 'You Win! Scissors beats Paper!';
-                } else if ((playerSelection == 'rock') && (computerSelection == 'paper')) {
-                    computerScore++;
-                    return 'You Lose! Paper beats Rock!';
-                } else if (playerSelection == computerSelection) {
-                    i--;
-                    return 'Draw! Try Again!';
-                } else {
-                    i--;
-                    return error;
-                }
+        //Take the random selection from computerPlay and match it against playerSelection
+        //If x == y, then print 'Draw! Try Again!'
+        //Else if x = Rock && y = Paper, then print 'You Lose! Paper beats Rock!'
+        //Else if x = Rock && y = Scissors, then print 'You Win! Rock beats Scissors!'
+        //Else if x = Paper && y = Rock, then print 'You Win! Paper beats Rock!'
+        //Else if x = Paper && y = Scissors, then print 'You Lose! Scissors beats Paper!'
+        //Else if x = Scissors && y = Rock, then print 'You Lose! Rock beats Scissors!'
+        //Else if x = Scissors && y = Paper, then print 'You Win! Scissors beats Paper!'
+        //Anything else will return error message
+            if ((playerSelection == 'rock') && (computerSelection == 'scissors')) {
+                ++playerScore;
+                return `You Win! Rock beats Scissors!`;
+            } else if ((playerSelection == 'paper') && (computerSelection == 'rock')) {
+                ++playerScore;
+                return `You Win! Paper beats Rock!`; 
+            } else if ((playerSelection == 'paper') && (computerSelection == 'scissors')) {
+                ++computerScore;
+                return `You Lose! Scissors beats Paper!`;
+            } else if ((playerSelection == 'scissors') && (computerSelection == 'rock')) {
+                ++computerScore;
+                return `You Lose! Rock beats Scissors!`;
+            } else if ((playerSelection == 'scissors') && (computerSelection == 'paper')) {
+                ++playerScore;
+                return `You Win! Scissors beats Paper!`;
+            } else if ((playerSelection == 'rock') && (computerSelection == 'paper')) {
+                ++computerScore;
+                return `You Lose! Paper beats Rock!`;
+            } else if (playerSelection == computerSelection) {
+                i--;
+                return `Draw! Try Again!`;
+            } else {
+                i--;//Develop way to disregard Draw and Error for loop
+                return error;
+            }
+            //If player wins, 1 point gained
+            //If player loses, computer gains 1 point
+            //If Draw or Error, no points gained
         }
-        if (i < 5) {
-            console.log(computerSelection);
-            console.log(playerSelection);
-            console.log(playRound(playerSelection, computerSelection));
-        } else if (s == 5) {
-            alert(gameOver);
-            console.log(gameOver);
+        switch (i <= 4) {
+            case (i < 5):
+                console.log(computerSelection);
+                console.log(playerSelection);
+                console.log(playRound(playerSelection, computerSelection));
+                break; 
+            default:
+                return `Game Over${gap}Home:${playerScore}${gap}Away:${computerScore}`;
         }
     }
+    let gape = "\r\n";
+    let grats = (playerScore > computerScore) ? 'Won the Game' : 'Suck at Life'
+    alert(`Game Over${gape}Home:${playerScore}${gape}Away:${computerScore}${gape}Congratulations, you ${grats}!`);
 }
 game();
