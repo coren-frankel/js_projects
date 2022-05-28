@@ -6,9 +6,10 @@
     margin: auto;
 }
 #again {
-    
+    /* Replay button*/
     color: orangered;
     margin: 20px;
+    position: relative;
 }
 img {
     width: auto;
