@@ -5,11 +5,13 @@
     font-size: large;
     margin: auto;
 }
-#again {
+button {
     /* Replay button*/
-    color: orangered;
-    margin: 20px;
-    position: relative;
+    display: flex;
+    margin-top: 200px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 img {
     width: auto;
@@ -17,10 +19,10 @@ img {
     padding: 10px;
     border: 10px;
     border-style: groove;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 header,
-.imagery
+.imagery,
 #again {
     display: flex;
     justify-content: center;
@@ -29,4 +31,9 @@ header,
 header {
     margin: 30px;
     font-size: larger;
+}
+.prompt {
+    margin: 200px;
+    height: 30px;
+    width: 100px;
 }
