@@ -32,8 +32,12 @@ header {
     margin: 30px;
     font-size: larger;
 }
-.prompt {
-    margin: 200px;
-    height: 30px;
-    width: 100px;
+#result {
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+#score {
+    background-color: whitesmoke;
+    color: blueviolet;
 }
