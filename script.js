@@ -86,7 +86,6 @@ function game() {//Create game function that uses playRound multiple times
                 result.textContent = `You played ${playerSelection} against the Computer's ${computerSelection}`;//If x == y, print 'Draw! Try Again!'
                 return result1.textContent = "Draw! Try Again!";
             }
-            
         };
         //Allow for user to click an image to choose Rock, Paper, or Scissors 
         imgs.forEach((img) => {//Use the .forEach method to iterate through each img
@@ -99,9 +98,7 @@ function game() {//Create game function that uses playRound multiple times
                 if ((computerScore == 5) || (playerScore == 5)) {
                     ++i, checkScore();
                 }})
-        }); //Once the player clicks an image, the playerSelection is made and assigned with playRound.
-        
-        
+        }); //Once the player clicks an image, the playerSelection is made and assigned with playRound.   
     }
 };
 game();
