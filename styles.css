@@ -1,43 +1,90 @@
 * {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: black;
+    background-color: darkcyan;
     color: pink;
     font-size: large;
     margin: auto;
-}
-button {
-    /* Replay button*/
-    display: flex;
-    margin-top: 200px;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
 }
 img {
     width: auto;
     height: 200px;
     padding: 10px;
     border: 10px;
-    border-style: groove;
-    justify-content: center;
+    border-style: dotted;
+    border-color: white;
 }
-header,
 .imagery,
-#again {
+#title,
+button {
     display: flex;
     justify-content: center;
-    color: yellow;
+    align-items: center;
 }
 header {
+    flex-direction: column;
     margin: 30px;
+    color: yellow;
     font-size: larger;
+    background-color: orangered;
+    height: 40px;
+    background-position: center;
+    border-radius: 5px;
+    border-style: outset;
+    border-color: orange;
+    text-decoration:line-through;
+    font-size: x-large;
 }
 #result {
-    background-color: white;
-    color: black;
+    background-color: magenta;
+    color: cyan;
+    -webkit-text-stroke: 1px royalblue;
     text-align: center;
+    height: 20px;
+    width: 500px;
+    padding: 5px;
+    border-style: dotted;
+    border-color: grey;
+    border-radius: 20px;
+}
+#result1 {
+    background-color: orange;
+    color: black;
+    font-style: oblique;
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    height: 20px;
+    width: 350px;
+    padding: 5px;
+    border-style: dotted;
+    border-color: grey;
+    border-radius: 20px;
 }
 #score {
-    background-color: whitesmoke;
+    background-color: chartreuse;
+    font-size: 19px;
     color: blueviolet;
+    text-align: center;
+    width: 150px;
+    height: 20px;
+    padding: 5px;
+    border-style: dotted;
+    border-color: grey;
+    border-radius: 20px;
+    -webkit-text-stroke: .5px seagreen;
+}
+button {
+    width: 60px;
+    height: 30px;
+    background-color: rgb(247, 247, 87);
+    color: skyblue;
+    -webkit-text-stroke: 1px black;
+    font-size: 21px;
+    text-align: center;
+    margin-top: 10px;
+}
+p {
+    background-color: chartreuse;
+    font-size: 19px;
+    color: blueviolet;
+    text-align: center;
 }
