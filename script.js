@@ -27,7 +27,6 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 //DOM Methods update the user
-const gap = document.createElement('br');
 
 function checkScore() {
     const con = (playerScore > computerScore) ? 'Congratulations' : 'Wow';
